@@ -3,30 +3,16 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    x = list(np.arange(-6, 8, 1))
+    x = list(np.arange(-6, 20, 1))
     # fig, ax = plt.subplots(1, 1)
     y = spec(x)
     makep(x, y)
     plt.show()
-    y = spec([i - 3 for i in x])
-    makep(x, y)
-    plt.show()
-    y = spec([i + 2 for i in x])
-    makep(x, y)
-    plt.show()
-    y = spec([-i for i in x])
-    makep(x, y)
-    plt.show()
-    y = spec([-i + 1 for i in x])
-    makep(x, y)
-    plt.show()
-    y = spec([-i - 2 for i in x])
-    makep(x, y)
-    plt.show()
+
 
 
 def spec(r):
-    return ramp([i + 4 for i in r]) - ramp([i - 4 for i in r]) - 8 * step([i - 4 for i in r]) - impulse([i + 3 for i in r])
+    return ramp([i + 4 for i in r]) - ramp([i for i in r]) - 4 * step([i - 8 for i in r]) + 2 * impulse([i -8 for i in r])
 
 
 def makep(x, y):
